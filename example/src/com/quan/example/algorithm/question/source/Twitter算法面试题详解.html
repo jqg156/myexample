@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Twitter算法面试题详解.html</title>
+<meta http-equiv="Content-Style-Type" content="text/css">
+<style type="text/css"><!--
+body {
+  margin: 15px 18px 15px 18px;
+  background-color: #ffffff;
+}
+/* ========== Text Styles ========== */
+hr { color: #000000}
+body, table, span.rvts0 /* Normal text */
+{
+ font-size: 10pt;
+ font-family: '宋体';
+ font-style: normal;
+ font-weight: normal;
+ color: #000000;
+ text-decoration: none;
+}
+a.rvts1, span.rvts1 /* Hyperlink */
+{
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts2
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+}
+a.rvts3, span.rvts3
+{
+ font-size: 12pt;
+ font-family: 'Times New Roman', 'Times', serif;
+ color: #0000ff;
+ text-decoration: underline;
+}
+span.rvts4
+{
+ font-family: 'Courier New', 'Courier', monospace;
+}
+span.rvts5
+{
+ font-size: 12pt;
+ font-weight: bold;
+ color: #000000;
+}
+/* ========== Para Styles ========== */
+p,ul,ol /* Paragraph Style */
+{
+ text-align: left;
+ text-indent: 0px;
+ padding: 0px 0px 0px 0px;
+ margin: 0px 0px 0px 0px;
+}
+.rvps1 /* Centered */
+{
+ text-align: center;
+}
+--></style>
+</head>
+<body>
+<p class=rvps1><span class=rvts5>Twitter&#31639;&#27861;&#38754;&#35797;&#39064;&#35814;&#35299;</span></p>
+<p><span class=rvts5><br></span></p>
+<p><span class=rvts2>&#26368;&#36817;&#22312;&#32593;&#19978;&#30475;&#21040;&#19968;&#36947;Twitter&#30340;&#31639;&#27861;&#38754;&#35797;&#39064;&#65292;&#32593;&#19978;&#24050;&#32463;&#26377;&#20154;&#32473;&#20986;&#20102;&#31572;&#26696;&#65292;&#19981;&#36807;&#21487;&#33021;&#26377;&#20123;&#20154;&#27809;&#22826;&#30475;&#26126;&#30333;&#65288;&#25105;&#20063;&#26410;&#39564;&#35777;&#26159;&#21542;&#27491;&#30830;&#65289;&#65292;&#29616;&#22312;&#32473;&#20986;&#19968;&#20010;&#27604;&#36739;&#22909;&#29702;&#35299;&#30340;&#31572;&#26696;&#12290;&#20808;&#30475;&#19968;&#19979;&#39064;&#30446;&#12290;</span></p>
+<p><img alt="" style="padding : 1px;" src="mynote.files/img1.jpg"></p>
+<p><span class=rvts2>&#22270;1</span></p>
+<p><span class=rvts2>&nbsp;&nbsp;&nbsp;&nbsp; &#20808;&#30475;&#30475;&#22270;&#22270;1&#12290;&#21487;&#20197;&#23558;&#26041;&#22359;&#30475;&#20570;&#30742;&#12290;&#39064;&#24178;&#24456;&#31616;&#21333;&#65292;&#38382;&#26368;&#22810;&#33021;&#25918;&#22810;&#23569;&#27700;&#12290;&#20363;&#22914;&#65292;&#22270;2&#23601;&#26159;&#22270;1&#21487;&#25918;&#30340;&#26368;&#22810;&#27700;&#65288;&#34013;&#33394;&#37096;&#20998;&#65289;&#65292;&#22914;&#26524;&#23558;&#19968;&#22359;&#30742;&#30475;&#20570;1&#30340;&#35805;&#65292;&#22270;2&#23601;&#26159;&#33021;&#25918;10&#20010;&#21333;&#20301;&#30340;&#27700;&#12290;</span></p>
+<p><img alt="" style="padding : 1px;" src="mynote.files/img2.jpg"></p>
+<p><span class=rvts2>&#22270;2</span></p>
+<p><span class=rvts2>&#20877;&#30475;&#20010;&#20363;&#23376;</span></p>
+<p><img alt="" style="padding : 1px;" src="mynote.files/img3.jpg"></p>
+<p><span class=rvts2>&#22270;3</span></p>
+<p><span class=rvts2>&#22270;3&#21487;&#20197;&#25918;17&#20010;&#21333;&#20301;&#30340;&#27700;&#12290;</span></p>
+<p><span class=rvts2>&#19978;&#38754;&#27599;&#19968;&#20010;&#22270;&#30340;&#30742;&#22681;&#29992;int&#25968;&#32452;&#34920;&#31034;&#65292;&#27599;&#19968;&#20010;&#25968;&#32452;&#20803;&#32032;&#34920;&#31034;&#27599;&#19968;&#21015;&#30742;&#22681;&#30340;&#30742;&#25968;&#65288;&#39640;&#24230;&#65289;&#65292;&#20363;&#22914;&#65292;&#22270;3&#29992;&#25968;&#32452;&#34920;&#31034;&#23601;&#26159;int[] wallHeights = new int[]{2, 5, 1, 3, 1, 2, 1, 7, 7, 6};</span></p>
+<p><span class=rvts2>&#36825;&#37324;&#26576;&#20154;&#32473;&#20986;&#20102;python&#30340;&#31639;&#27861;</span><span class=rvts3>&#28857;&#20987;&#25171;&#24320;&#38142;&#25509;</span><span class=rvts2>&#65292;&#19981;&#36807;&#26377;&#20154;&#35828;&#26377;&#38382;&#39064;&#65292;&#26377;python&#29615;&#22659;&#30340;&#21487;&#20197;&#39564;&#35777;&#12290;&#29616;&#22312;&#32473;&#20986;&#25105;&#30340;Java&#31639;&#27861;&#12290;</span></p>
+<p><span class=rvts2>&#31639;&#27861;&#21407;&#29702;</span></p>
+<p><span class=rvts2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &#20854;&#23454;&#24456;&#31616;&#21333;&#65292;&#25105;&#30340;&#31639;&#27861;&#24182;&#19981;&#26159;&#32047;&#21152;&#30340;&#65292;&#32780;&#26159;&#29992;&#30340;&#20943;&#27861;&#65292;&#20808;&#29992;&#22270;3&#20026;&#20363;&#12290;&#21482;&#38656;&#35201;&#25214;&#21040;&#25152;&#26377;&#22681;&#20013;&#26368;&#39640;&#30340;&#65292;&#28982;&#21518;&#20877;&#25214;&#20986;&#31532;&#20108;&#39640;&#30340;&#12290;&#22914;&#26524;&#20004;&#22581;&#22681;&#32039;&#37051;&#32773;&#65292;&#23601;&#24573;&#30053;&#23427;&#65292;&#21542;&#21017;&#31639;&#19968; &#19979; &#22914;&#26524;&#22681;&#20043;&#38388;&#27809;&#26377;&#20219;&#20309;&#20854;&#20182;&#30340;&#30742;&#30340;&#24773;&#20917;&#19979;&#21487;&#20197;&#26377;&#22810;&#23569;&#27700;&#65288;&#21482;&#26159;&#19968;&#20010;&#20056;&#27861;&#32780;&#24050;&#65289;&#65292;&#28982;&#21518;&#25195;&#25551;&#20004;&#22581;&#22681;&#20043;&#38388;&#26377;&#22810;&#23569;&#22359;&#30742;&#65292;&#20943;&#21435;&#36825;&#20010;&#30742;&#25968;&#23601;&#21487;&#20197;&#20102;&#12290;&#26368;&#21518;&#29992;&#36882;&#24402;&#22788;&#29702;&#12290;&#23558;&#20004;&#22581;&#22681; &#20004;&#20391;&#21040;&#21508;&#33258;&#30340;&#24038;&#21491;&#36793;&#30028;&#20877;&#37325;&#26032;&#36827;&#34892;&#21069;&#38754;&#30340;&#25805;&#20316;&#65288;&#36882;&#24402;&#22788;&#29702;&#65289;&#12290;&#30452;&#21040;&#26080;&#22681;&#21487;&#22788;&#29702;&#12290; &#29992;&#36882;&#24402;&#26041;&#27861;&#24456;&#23481;&#26131;&#29702;&#35299;&#12290;&#19979;&#38754;&#30475;&#19968;&#19979;&#31639;&#27861;&#30340;&#35814;&#32454;&#20195;&#30721;&#12290;</span></p>
+<p><a name="RichViewCheckpoint0"></a>
+<img alt="复制代码" src="mynote.files/img4.gif"></p>
+<p><span class=rvts4>public class</span><span class=rvts2> Test &nbsp;
+{</span></p>
+<p><span class=rvts2>{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;static int result = 0; &nbsp;// &nbsp;&#26368;&#32456;&#32467;&#26524; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp;static int[] wallHeights = new int[] &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;{1,6,1,2,3,4,100,1,9}; &nbsp;// &nbsp;&#34920;&#31034;&#25152;&#26377;&#30340;&#22681;&#30340;&#39640;&#24230; &nbsp;</span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp;public static void process(int start, int end) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;first&#65306;start&#21644;end&#20043;&#38388;&#26368;&#39640;&#30340;&#22681; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;second&#65306;start&#21644;end&#20043;&#38388;&#31532;&#20108;&#39640;&#30340;&#22681; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;int first = 0, second = 0; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;firstIndex&#65306;&#31532;&#19968;&#39640;&#30340;&#22681;&#22312;wallHeights&#20013;&#30340;&#32034;&#24341; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;secondIndex&#65306;&#31532;&#20108;&#39640;&#30340;&#22681;&#22312;wallHeights&#20013;&#30340;&#32034;&#24341; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;int firstIndex = 0, secondIndex = 0; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#20004;&#22581;&#22681;&#24517;&#39035;&#33267;&#23569;&#26377;&#19968;&#22581;&#22681;&#30340;&#36317;&#31163; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;if (end - start &lt;= 1) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#24320;&#22987;&#33719;&#21462;&#31532;&#19968;&#39640;&#21644;&#31532;&#20108;&#39640;&#22681;&#30340;&#30742;&#25968; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;for (int i = start; i &lt;= end; i++) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (wallHeights[i] &gt; first) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;second = first; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;secondIndex = firstIndex; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;first = wallHeights[i]; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;firstIndex = i; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else if (wallHeights[i] &gt; second) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;second = wallHeights[i]; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;secondIndex = i; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#33719;&#21462;&#24038;&#20391;&#22681;&#30340;&#32034;&#24341; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;int startIndex = Math.min(firstIndex, secondIndex); &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#33719;&#21462;&#21491;&#20391;&#22681;&#30340;&#32034;&#24341; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;int endIndex = Math.max(firstIndex, secondIndex); &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#35745;&#31639;&#36317;&#31163; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;int distance = endIndex - startIndex; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#22914;&#26524;&#31532;&#19968;&#39640;&#30340;&#22681;&#21644;&#31532;&#20108;&#39640;&#30340;&#22681;&#20043;&#38388;&#33267;&#23569;&#26377;&#19968;&#22581;&#22681;&#65292;&#37027;&#20040;&#24320;&#22987;&#35745;&#31639;&#36825;&#20004;&#22581;&#22681;&#20043;&#38388;&#21487;&#20197;&#25918;&#22810;&#23569;&#20010;&#21333;&#20301;&#30340;&#27700; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;if (distance &gt; 1) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result = result + (distance - 1) * second; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#20943;&#21435;&#36825;&#20004;&#22581;&#22681;&#20043;&#38388;&#30340;&#30742;&#25968; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (int i = startIndex + 1; i &lt; endIndex; i++) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;result -= wallHeights[i]; &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2><br></span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#24320;&#22987;&#36882;&#24402;&#22788;&#29702;&#24038;&#20391;&#22681;&#36317;&#31163;&#24320;&#22987;&#20301;&#32622;&#33021;&#25918;&#22810;&#23569;&#27700; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;process(start, startIndex); &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;// &nbsp;&#24320;&#22987;&#36882;&#24402;&#22788;&#29702;&#21491;&#20391;&#22681;&#36317;&#31163;&#32467;&#26463;&#20301;&#32622;&#33021;&#25918;&#22810;&#23569;&#27700; &nbsp;</span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;process(endIndex, end); &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;} &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;public static void main(String[] args) &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;{ &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;process(0, wallHeights.length - 1); &nbsp;
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp; &nbsp; &nbsp;System.out.println(result); 
+ </span></p>
+<p><span class=rvts2> &nbsp; &nbsp;} &nbsp;
+}</span></p>
+<p><span class=rvts2>} &nbsp;</span></p>
+<p><a name="RichViewCheckpoint1"></a>
+<img width=20 height=20 alt="复制代码" src="mynote.files/img5.gif"></p>
+<p><span class=rvts2>&#20195;&#30721;&#20013;&#30340;&#27979;&#35797;&#29992;&#20363;&#30340;&#32467;&#26524;&#26159;22&#12290;&#19979;&#38754;&#26159;&#20960;&#32452;&#27979;&#35797;&#29992;&#20363;&#12290;</span></p>
+<p><span class=rvts2>&nbsp;</span></p>
+<p><span class=rvts2>[2,5,1,2,3,4,7,7,6]&nbsp;&nbsp; &#32467;&#26524;&#65306;10</span></p>
+<p><span class=rvts2>[2,5,1,3,1,2,1,7,7,6]&nbsp; &#32467;&#26524;&#65306;17</span></p>
+<p><span class=rvts2>[6,1,4,6,7,5,1,6,4]&nbsp;&nbsp; &#32467;&#26524;&#65306;13</span></p>
+<p><span class=rvts2>[9,6,1,2,3,4,50,1,9]&nbsp; &#32467;&#26524;&#65306;37</span></p>
+</body></html>

@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class MultiThreadObjectAssignment {
 
-	private List<String> list = new ArrayList<>();
+	private volatile List<String> list = new ArrayList<>();
 	
 	public MultiThreadObjectAssignment() {
 		list.add("1");
